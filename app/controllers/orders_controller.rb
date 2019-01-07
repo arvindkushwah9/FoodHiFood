@@ -36,10 +36,10 @@ class OrdersController < ApplicationController
   # GET /printers.json
   def printers
      begin
-      @orders = Order.all
-      return render json: {status: 200, data: {orders: orders_as_json(orders: @orders)}, message: "successfully Listed"}
+      @printers = EmailCallback.all
+      return render json: {status: 200, data: {printers: @printers.to_json}, message: "successfully Listed"}
     rescue
-      return render json: {status: 500, data: {orders: nil}, message: "Something went wrong"}
+      return render json: {status: 500, data: {printers: nil}, message: "Something went wrong"}
     end
   end
 end
