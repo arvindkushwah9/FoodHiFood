@@ -1,6 +1,6 @@
 In this project you'll use Ruby on Rails to build an online commerce platform for a restaurant to facilitate online ordering.
 
-[![Code Climate](https://codeclimate.com/github/andela/dinner-dash-rails/badges/gpa.svg)](https://codeclimate.com/github/andela/dinner-dash-rails)   [![Test Coverage](https://codeclimate.com/github/andela/dinner-dash-rails/badges/coverage.svg)](https://codeclimate.com/github/andela/dinner-dash-rails/coverage)
+[![Code Climate](https://github.com/arvindkushwah9/FoodHiFood/badges/gpa.svg)](https://github.com/arvindkushwah9/FoodHiFood)   [![Test Coverage](https://github.com/arvindkushwah9/FoodHiFood/badges/coverage.svg)](https://github.com/arvindkushwah9/FoodHiFood/coverage)
 
 ## Introduction
 
@@ -23,15 +23,6 @@ Project implementation may **not** use:
 * Any external library for authentication except `bcrypt`
 * A pre-existing, externally created CSS/HTML design/template (however, you may use [Bootstrap](http://getbootstrap.com/), [Zurb Foundation](http://foundation.zurb.com/), etc. )
 
-### Getting Started
-
-1. One team member creates a repository named "dinner_dash"
-2. Add the other team members as collaborators
-3. Add your project to Waffle.io
-4. Configure [Hound](https://houndci.com/) for style guide violations
-5. Configure [Skylight](http://docs.skylight.io/getting-started/) to monitor your app's performance
-6. Create issues for user stories
-7. Work on branches and use pull requests to review and merge code
 
 ## Base Expectations
 
@@ -153,10 +144,10 @@ To support the evaluation process, please make the following available via the `
 * Orders
   * At least 10 sample orders, with at least two at each stage of fulfillment (`ordered`, `completed`, `cancelled`)
 * Users
-  * Normal user with full name "Rachel Warbelow", email address "demo+rachel@jumpstartlab.com", password of "password" and no display name
-  * Normal user with full name "Jeff Casimir", email address "demo+jeff@jumpstartlab.com", password of "password" and display name "j3"
-  * Normal user with full name "Jorge Tellez", email address "demo+jorge@jumpstartlab.com", password of "password" and display name "novohispano"
-  * User with admin priviliges with full name "Josh Cheek", email address "demo+josh@jumpstartlab.com", password of "password", and display name "josh"
+  * Normal user with full name "Rachel Warbelow", email address "demo+rachel@bittern.co", password of "password" and no display name
+  * Normal user with full name "Jeff Casimir", email address "demo+jeff@bittern.co", password of "password" and display name "j3"
+  * Normal user with full name "Jorge Tellez", email address "demo+jorge@bittern.co", password of "password" and display name "novohispano"
+  * User with admin priviliges with full name "Josh Cheek", email address "demo+josh@bittern.co", password of "password", and display name "josh"
 
 ## Submission Guidelines
 
