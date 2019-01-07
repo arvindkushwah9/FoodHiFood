@@ -51,7 +51,9 @@ class AdministratorController < ApplicationController
     @order_id = params["order_id"]
     @order = Order.find(@order_id)
     @order.update(Status: @status)
-    StatusWorker.perform_async(@order_id)
+    # StatusWorker.perform_async(@order_id)
+    UserMailer.status_email(@order).deliver
+
     redirect_to dashboard_path
   end
 end
