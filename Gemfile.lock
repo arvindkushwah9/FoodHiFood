@@ -346,7 +346,7 @@ DEPENDENCIES
   material_icons
   materialize-sass
   paperclip
-  pg
+  pg (= 1.1.3)
   pry-nav
   rails (= 4.2.3)
   rails_12factor
