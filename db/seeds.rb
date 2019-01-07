@@ -21,20 +21,20 @@ C2 = Category.create(title: "Desserts",
 U1 = User.create(first_name: "Damilola",
                  last_name: "Roberts",
                  email: "dr@yahoo.com",
-                 password: "whatever",
-                 password_confirmation: "whatever")
+                 password: "password",
+                 password_confirmation: "password")
 
 U2 = User.create(first_name: "Jeff",
                  last_name: "Roberts",
                  email: "jr@yahoo.com",
-                 password: "whatever",
-                 password_confirmation: "whatever")
+                 password: "password",
+                 password_confirmation: "password")
 
-A1 = User.create(first_name: "Nadayar",
-                 last_name: "Andela",
-                 email: "nadayar@andela.com",
-                 password: "nadayar",
-                 password_confirmation: "nadayar",
+A1 = User.create(first_name: "Arvind",
+                 last_name: "Kushwah",
+                 email: "arvind@bittern.co",
+                 password: "password",
+                 password_confirmation: "password",
                  role: "admin")
 
 O1 = Order.create(Status: "Completed", transaction_id: "123ss1", user_id: U1.id)
