@@ -16,7 +16,8 @@ Rails.application.routes.draw do
   resources :users do
     resources :orders
   end
-
+  get "/printers" => "orders#printers", as: "printers"
+  get "/email_callback" => "orders#email_callback", as: "email_callback"
   get "display/:option" => "sales#display", as: "display"
   get "login" => "sessions#new"
   get "/payment/processed" => "checkout#create", as: :get_payment_completed

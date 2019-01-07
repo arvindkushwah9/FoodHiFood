@@ -21,4 +21,18 @@ class OrdersController < ApplicationController
 
   def delete
   end
+
+  def email_callback
+    puts params
+  end
+
+  # GET /printers.json
+  def printers
+     begin
+      @orders = Order.all
+      return render json: {status: 200, data: {orders: orders_as_json(orders: @orders)}, message: "successfully Listed"}
+    rescue
+      return render json: {status: 500, data: {orders: nil}, message: "Something went wrong"}
+    end
+  end
 end
