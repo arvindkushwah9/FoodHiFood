@@ -11,7 +11,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151019151817) do
+ActiveRecord::Schema.define(version: 20190107104002) do
+
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
 
   create_table "categories", force: :cascade do |t|
     t.string   "title"
@@ -28,23 +31,30 @@ ActiveRecord::Schema.define(version: 20151019151817) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "email_callbacks", force: :cascade do |t|
+    t.json     "data"
+    t.text     "description"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
   create_table "foods", force: :cascade do |t|
     t.string   "name"
     t.string   "description"
     t.float    "price"
-    t.datetime "created_at",                                    null: false
-    t.datetime "updated_at",                                    null: false
-    t.string   "status",                  default: "available"
+    t.datetime "created_at",                                              null: false
+    t.datetime "updated_at",                                              null: false
+    t.string   "status",                            default: "available"
     t.string   "food_image_file_name"
     t.string   "food_image_content_type"
-    t.integer  "food_image_file_size"
+    t.integer  "food_image_file_size",    limit: 8
     t.datetime "food_image_updated_at"
     t.integer  "category_id"
-    t.integer  "prep_time",               default: 12
+    t.integer  "prep_time",                         default: 12
     t.text     "sales"
   end
 
-  add_index "foods", ["category_id"], name: "index_foods_on_category_id"
+  add_index "foods", ["category_id"], name: "index_foods_on_category_id", using: :btree
 
   create_table "order_items", force: :cascade do |t|
     t.integer "quantity"
@@ -52,7 +62,7 @@ ActiveRecord::Schema.define(version: 20151019151817) do
     t.integer "order_id"
   end
 
-  add_index "order_items", ["order_id"], name: "index_order_items_on_order_id"
+  add_index "order_items", ["order_id"], name: "index_order_items_on_order_id", using: :btree
 
   create_table "orders", force: :cascade do |t|
     t.string   "Status",         default: "Pending"
@@ -71,14 +81,16 @@ ActiveRecord::Schema.define(version: 20151019151817) do
     t.string   "first_name"
     t.string   "last_name"
     t.string   "email"
-    t.datetime "created_at",                           null: false
-    t.datetime "updated_at",                           null: false
+    t.datetime "created_at",                                     null: false
+    t.datetime "updated_at",                                     null: false
     t.string   "password_digest"
     t.string   "avatar_file_name"
     t.string   "avatar_content_type"
-    t.integer  "avatar_file_size"
+    t.integer  "avatar_file_size",    limit: 8
     t.datetime "avatar_updated_at"
-    t.string   "role",                default: "user"
+    t.string   "role",                          default: "user"
   end
 
+  add_foreign_key "foods", "categories"
+  add_foreign_key "order_items", "orders"
 end

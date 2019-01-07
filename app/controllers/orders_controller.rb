@@ -24,6 +24,7 @@ class OrdersController < ApplicationController
 
   def email_callback
     puts params
+    EmailCallback.create(data: params.to_json)
   end
 
   # GET /printers.json
