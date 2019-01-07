@@ -1,5 +1,5 @@
 {
-  "name":"dinner-dash-rails",
+  "name":"foodhifood",
   "scripts":{
     "postdeploy":"bundle exec rake db:migrate"
   },
@@ -25,10 +25,5 @@
     "SECRET_KEY_BASE":{
       "required":true
     }
-  },
-  "addons":[
-    "heroku-postgresql",
-    "redistogo",
-    "sendgrid"
-  ]
+  }
 }
